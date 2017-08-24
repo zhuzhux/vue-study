@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-1</title>
+    <!--<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" harset="utf-8"></script>-->
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+
+</head>
+<body>
+
+<h1>component-2</h1>
+<hr>
+<div id="app">
+    <panda :from-here="message"></panda>
+</div>
+
+<script type="text/javascript">
+  var app = new Vue({
+    el: "#app",
+    data: {
+      message: "China"
+    },
+    components: {
+      "panda": {
+        template: `<div style="color:red">Panda from {{fromHere}}</div>`,
+        props: ['fromHere']
+      }
+    }
+  });
+</script>
+</body>
+</html>

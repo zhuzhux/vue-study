@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+    <!--<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" harset="utf-8"></script>-->
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+
+</head>
+<body>
+
+    <h1>Helloworld</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "hello world111!"
+            }
+        });
+    </script>
+</body>
+</html>

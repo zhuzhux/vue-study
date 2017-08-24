@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-3</title>
+    <!--<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" harset="utf-8"></script>-->
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+
+</head>
+<body>
+
+<h1>component-3</h1>
+<hr>
+<div id="app">
+    <panda></panda>
+</div>
+
+<script type="text/javascript">
+  var city = {
+    template: `<div style="color:deepskyblue">siChuan of China</div>`
+  }
+  var pandaComponent = {
+    template: `
+      <div style="color:red;">
+      <p>Panda from China!</p>
+      <city></city>
+      </div>
+    `,
+    components: {
+      "city": city
+    },
+  }
+
+
+  var app = new Vue({
+    el: "#app",
+    components: {
+      "panda": pandaComponent,
+    }
+  });
+</script>
+</body>
+</html>

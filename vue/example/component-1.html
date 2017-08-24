@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-1</title>
+    <!--<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js" type="text/javascript" harset="utf-8"></script>-->
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+
+</head>
+<body>
+
+<h1>component-1</h1>
+<hr>
+<div id="app">
+    <jspang></jspang>
+    <panda></panda>
+</div>
+
+<script type="text/javascript">
+  Vue.component("jspang",{
+    template: `<div style="color:red">我是全局的jspang组件</div>`
+  })
+  var app = new Vue({
+    el: "#app",
+    components: {
+      "panda": {
+        template: `<div style="color:red">我是局部的panda组件</div>`
+      }
+    }
+  });
+</script>
+</body>
+</html>

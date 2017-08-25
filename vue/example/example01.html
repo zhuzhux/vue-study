@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example methods demo</title>
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>example methods demo</h1>
+<hr>
+<div id="app">
+{{message}}
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: 'wxj'
+      },
+      mounted: function(){
+        $("#app").html("this is jqery");
+      },
+      methods: {
+        add: function(){
+          console.log("调用了构造器内部的ADD方法")
+        }
+      }
+    });
+
+    app.add();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+</head>
+<body>
+<h1>slot</h1>
+<hr>
+<div id="app">
+    <wxj>
+        <span slot="bolgUrl">{{wxjData.bolgUrl}}</span>
+        <span slot="netName">{{wxjData.netName}}</span>
+        <span slot="skill">{{wxjData.skill}}</span>
+    </wxj>
+</div>
+<template id="tmp">
+    <div>
+        <p>博客地址：<slot name="bolgUrl"></slot></p>
+        <p>网名：<slot name="netName"></slot></p>
+        <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+</template>
+<script type="text/javascript">
+    var wxj = {
+      template: "#tmp"
+    }
+    var app = new Vue({
+      el: "#app",
+      data: {
+       wxjData: {
+         bolgUrl: 'http://jspang.com',
+         netName: 'wxjii',
+         skill: 'web前端'
+       }
+      },
+      components:{
+        "wxj": wxj
+      }
+    });
+
+</script>
+
+</body>
+</html>

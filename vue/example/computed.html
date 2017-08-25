@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <script src="../assets/vue.js" type="text/javascript" harset="utf-8"></script>
+
+</head>
+<body>
+<h1>computed</h1>
+<hr>
+<div id="app">
+    <p>{{newPrice}}</p>
+    <p>{{price}}</p>
+    <ul>
+        <li v-for="item in reversNews">{{item.title}}--{{item.date}}</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var newsList = [
+      {title: "“平语”近人——习近平谈作风建设", date: "2017/8/22"},
+      {title: "党的理论创新  金砖国家峰会  述评八  砥砺奋进", date: "2017/8/23"},
+      {title: "中国籍人士在美被捕?被控为黑客共犯攻击美政府", date: "2017/8/23"},
+      {title: "魅族冤不冤？产品被质疑国内国外“双重标准”", date: "2017/8/24"},
+      {title: "“平语”近人——习近平谈作风建设", date: "2017/8/25"},
+    ];
+    var app = new Vue({
+      el: "#app",
+      data: {
+        price: 100,
+        newsList: newsList
+      },
+      computed: {
+        newPrice: function () {
+          return this.price = "￥" + this.price + "元";
+        },
+        reversNews: function(){
+          return this.newsList.reverse();
+        }
+      }
+    });
+</script>
+</body>
+</html>
